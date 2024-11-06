@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习2</title>
+</head>
+
+<body>
+    <button onclick="start()" id="but">点我5秒倒计时</button>
+    <div id="item"></div>
+    <script>
+        var but = document.getElementById('but');
+        var item = document.getElementById('item');
+        var intervalId;  // 计时器的ID
+
+        function start() {
+            var num = 5; 
+            if (intervalId) {
+                clearInterval(intervalId);  
+                // 清除之前的计时器
+            }
+            function timeText() {
+                if (num > 0) {
+                    num--;
+                    item.innerText = num;
+                    but.disabled = true;
+                } else {
+                    clearInterval(intervalId); 
+                    but.disabled = false;
+                    item.innerHTML = '';
+                }
+            }
+            timeText();
+            intervalId = setInterval(timeText, 1000);
+        }
+    </script>
+</body>
+
+</html>

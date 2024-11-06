@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习3</title>
+</head>
+
+<body>
+
+    <p>密码: <input type="password" id="pwdInput"></p>
+    <button onclick="item()">显示/隐藏密码</button>
+
+    <script>
+        function item() {
+            var x = document.getElementById("pwdInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

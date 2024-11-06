@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习1</title>
+</head>
+<body>
+    <div id="item">
+        不要点击按钮呀 !
+    </div>
+    <button id="but" onclick="tobig()">点我点我</button>
+    <script>
+        var btn = document.getElementById('btn')
+        var item = document.getElementById('item')
+        var newSize = 20 ;
+        function tobig(){
+            item.setAttribute("style",`color:green;font-size:${newSize}px`);
+            item.innerHTML="XXX";
+            newSize++
+            newSize += 5;
+            //item.style.fontSize = newSize + 'px';
+        }
+    </script>
+</body>
+</html>

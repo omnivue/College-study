@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习5</title>
+</head>
+
+<body>
+    <h1>日期差计算器</h1>
+    <label for="startDate">开始日期:</label>
+    <input type="date" id="startDate" required>
+    <br><br>
+    <label for="endDate">结束日期:</label>
+    <input type="date" id="endDate" required>
+    <br><br>
+    <button onclick="calculateDays()">计算天数</button>
+    <p id="result"></p>
+    <script>
+        function calculateDays() {
+            var startDate = document.getElementById('startDate').value;
+            var endDate = document.getElementById('endDate').value;
+
+            if (startDate && endDate) {
+                var start = new Date(startDate);
+                var end = new Date(endDate);
+                var diff = end - start;
+                var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+                if (days < 0) {
+                    document.getElementById('result').innerText = "结束日期不能早于开始日期";
+                } else {
+                    document.getElementById('result').innerText = "两个日期之间的天数差为: " + days + " 天";
+                }
+            } else {
+                document.getElementById('result').innerText = "请输入有效的日期";
+            }
+        }
+    </script>
+</body>
+
+</html>

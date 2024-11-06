@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js事件</title>
+</head>
+<body>
+    <button onclick="alert('框框给你两拳👊')">点击我</button>
+    <button onclick="changeColor()" id="btn">green</button>
+    <button id="btn3">我是第三种方法</button>
+    <script>
+        var btn = document.getElementById('btn');
+        function changeColor(){
+            btn.setAttribute("style","color:green")
+        };
+        var btn3 = document.getElementById('btn3');
+        btn3.onclick = function(){
+            btn3.setAttribute("style","color:green")
+        }
+
+    </script>
+</body>
+</html>

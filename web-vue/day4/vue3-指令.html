@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue3指令</title>
+    <script src="./vue.global.js"></script>
+    <style>
+        .fcolor {
+            color: red;
+        }
+
+        .fsize {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-text="msg"></div>
+        <div v-show="flag" style="color: blue;">ohhhhh</div>
+        <input type="checkbox" v-bind:checked="boolean2">
+        <!-- <div class="fcolor fsize">字体颜色是红色的,大小是20px</div> -->
+        <div v-bind:class="{fcolor:fc,fsize:fs}">字体颜色是红色的,大小是20px</div>
+        <div v-bind:class="{class_array}">字体颜色是红色的,大小是20px</div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    boolean2: true,
+                    msg: "hello vue3",
+                    flag: true,
+                    num: 10,
+                    fc: true,
+                    fs: false,
+                    class_array: ["fcolor", "fsize"]
+
+                };
+            }
+        }).mount("#app");
+    </script>
+</body>
+
+</html>
